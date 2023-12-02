@@ -1,10 +1,11 @@
 import java.util.*;
 
-public class LLToStack {
-    public static class LLtoStackAdapter {
+public class LLtoQueue {
+
+    public static class LLtoQueueAdapter {
         LinkedList<Integer> list;
 
-        public LLtoStackAdapter() {
+        LLtoQueueAdapter() {
             list = new LinkedList<>();
         }
 
@@ -13,21 +14,19 @@ public class LLToStack {
         }
 
         void push(int val) {
-            list.addFirst(val);
+            list.addLast(val);
         }
 
         int pop() {
-            if (list.size() == 0) {
-                System.out.println("Stack Underflow");
+            if (size() == 0) {
                 return -1;
             } else {
                 return list.removeFirst();
             }
         }
 
-        int top() {
-            if (list.size() == 0) {
-                System.out.println("Stack Underflow");
+        int peek() {
+            if (size() == 0) {
                 return -1;
             } else {
                 return list.getFirst();
@@ -38,5 +37,6 @@ public class LLToStack {
     }
 
     public static void main(String[] args) {
+
     }
 }
